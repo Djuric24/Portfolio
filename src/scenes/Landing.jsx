@@ -19,19 +19,18 @@ const Landing = ({ setSelectedPage }) => {
           >
             <img
               alt="profile"
-              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
-              src="assets/profile-image.png"
+              className="rounded-t-full hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[200px] md:max-w-[400px]"
+              src="https://aleksandardjuric.netlify.app/images/bg/20221210_203532.jpg"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            className="z-10 w-full max-w-[400px] md:max-w-[600px]"
-            src="assets/profile-image.png"
+            className=" z-10 w-full max-w-[400px] md:max-w-[600px]"
+            src="https://aleksandardjuric.netlify.app/images/bg/20221210_203532.jpg"
           />
         )}
       </div>
-
       {/* MAIN TEXT */}
       <div className="z-30 basis-2/5 mt-12 md:mt-32">
         {/* HEADINGS */}

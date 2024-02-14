@@ -25,8 +25,7 @@ const Project = ({ title }) => {
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
+          Click to see app
         </p>
       </div>
       <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
@@ -89,6 +88,7 @@ const Projects = () => {
           {/* ROW 3 */}
           <Project title="Project 6" />
           <Project title="Project 7" />
+          <Project title="My Project" projectLink="https://applicationtracking.netlify.app/" imagePath="https://www.ec2i.biz/hubfs/Job%20Tracking.png" />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
