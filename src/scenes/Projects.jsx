@@ -15,20 +15,25 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ( {title, subtitle, imageUrl} ) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
-  const projectTitle = title.split(" ").join("-").toLowerCase();
+  //  const projectTitle = title.split(" ").join("-").toLowerCase();
+  const projectTitle = typeof title === "string" ? title : "Default Title";
 
-  return (
+
+
+   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
+        <p className="mt-7">{subtitle}</p>
+          <img src={imageUrl} alt={projectTitle} className="max-h-[200px] mt-4" />
         <p className="mt-7">
           Click to see app
         </p>
       </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      {/* <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} /> */}
     </motion.div>
   );
 };
@@ -56,12 +61,12 @@ const Projects = () => {
             <LineGradient width="w-2/3" />
           </div>
         </div>
-        <p className="mt-10 mb-10">
+        <p className="mt-6 mb-6">
           Hire you can see my React, Angular and Javascript projects.
         </p>
       </motion.div>
 
-      {/* PROJECTS */}
+        {/* PROJECTS */}
       <div className="flex justify-center">
         <motion.div
           className="sm:grid sm:grid-cols-3"
@@ -77,8 +82,25 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
+          {/* <Project
+            id="project-1"
+            title="Job Tracking App"
+            projectLink="https://applicationtracking.netlify.app/"
+            imageUrl="https://www.ec2i.biz/hubfs/Job%20Tracking.png"
+          /> */}
+           {/* <a href="https://applicationtracking.netlify.app/" target="_blank" title="Job Tracking App" >
+            <img src="https://www.ec2i.biz/hubfs/Job%20Tracking.png" alt="title" id="project" />
+          </a> */}
+          <Project
+            title="Job tracking"
+            subtitle="React app"
+            imageUrl="https://www.ec2i.biz/hubfs/Job%20Tracking.png"
+          />
+          <Project
+           title="Jim"
+           subtitle="React app"
+           imageUrl="..\assets\project-1.jpeg"
+           />
 
           {/* ROW 2 */}
           <Project title="Project 3" />
@@ -88,7 +110,6 @@ const Projects = () => {
           {/* ROW 3 */}
           <Project title="Project 6" />
           <Project title="Project 7" />
-          <Project title="My Project" projectLink="https://applicationtracking.netlify.app/" imagePath="https://www.ec2i.biz/hubfs/Job%20Tracking.png" />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
