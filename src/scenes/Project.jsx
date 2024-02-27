@@ -25,6 +25,7 @@ const Project = ({ title }) => {
       case "Fitness App":return "https://fitness-app-djuric.netlify.app/"
       case "Ai article summarizer App":return "https://ai-article-summarizer-djuric.netlify.app/"
       case "Movie app" : return "https://movie-app-djuric.netlify.app/"
+      // case "Drums app" : return "https://djuric-drums.netlify.app/"
       default :return
     }
   }
@@ -38,6 +39,8 @@ const Project = ({ title }) => {
         return "https://www.klippa.com/wp-content/uploads/2023/03/GPT4-_header-1024x486.jpg"
       case "Movie app" : 
         return "https://is4-ssl.mzstatic.com/image/thumb/Purple/v4/8c/14/79/8c147971-733e-77b4-747a-0bf1ccf3b22c/source/320x480bb.jpg"
+      // case "Drums app" :
+      //   return "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/3d/bf/75/3dbf75c8-79a6-df91-8445-39ea64d51fe1/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg" 
         default : return
     }
   }
@@ -104,11 +107,11 @@ const Projects = () => {
           {/* ROW 2 */}
           <Project title="Ai article summarizer App" />
           <Project title="Movie app" />
-          <Project title="Project 5" />
+          {/* <Project title="Drums app" /> */}
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          {/* <Project title="Polovni automobili" /> */}
+          {/* <Project title="Project 7" /> */}
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
