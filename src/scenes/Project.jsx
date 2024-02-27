@@ -19,16 +19,37 @@ const Project = ({ title }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
-
+  const getApplicationLink = () => {
+    switch (title) {
+      case "Job tracking" : return "https://applicationtracking.netlify.app/"
+      case "Fitness App":return "https://fitness-app-djuric.netlify.app/"
+      case "Ai article summarizer App":return "https://ai-article-summarizer-djuric.netlify.app/"
+      case "Movie app" : return "https://movie-app-djuric.netlify.app/"
+      default :return
+    }
+  }
+  const getImgUrl = () => {
+     switch (title) {
+      case "Job tracking":
+        return "https://lmi.mt.gov/_images/Graphics/dashboardgraphics/Dashboard_ButtonsNT_JobTracking.png"
+      case "Fitness App": 
+        return "https://www.intersport.rs/media/catalog/product/cache/382907d7f48ae2519bf16cd5f39b77f9/h/e/hex-dumbbells_282765_050_f1.jpeg"
+      case "Ai article summarizer App":
+        return "https://www.klippa.com/wp-content/uploads/2023/03/GPT4-_header-1024x486.jpg"
+      case "Movie app" : 
+        return "https://is4-ssl.mzstatic.com/image/thumb/Purple/v4/8c/14/79/8c147971-733e-77b4-747a-0bf1ccf3b22c/source/320x480bb.jpg"
+        default : return
+    }
+  }
   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
-          Click to see app.
+          <a href={getApplicationLink()}>Click to see the app</a>
         </p>
       </div>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      <img src={getImgUrl()} alt={projectTitle} className="w-[400px] h-[400px]" />
     </motion.div>
   );
 };
@@ -77,17 +98,12 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-           <Project
-              title="Job tracking"
-              subtitle="React app"
-              imageUrl="https://www.ec2i.biz/hubfs/Job%20Tracking.png"
-              projectLink="https://applicationtracking.netlify.app/"
-            />
-          <Project title="Project 2" />
+          <Project title="Job tracking" />
+          <Project title="Fitness App" />
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
+          <Project title="Ai article summarizer App" />
+          <Project title="Movie app" />
           <Project title="Project 5" />
 
           {/* ROW 3 */}
