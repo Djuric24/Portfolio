@@ -81,7 +81,7 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Here you can see my React, Angular and Javascript projects.
+          Here you can see some of my React, Angular and Javascript projects.
         </p>
       </motion.div>
 
