@@ -2,7 +2,7 @@ import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const Link = ({ page, selectedPage, setSelectedPage,setIsMenuToggled=() => {} }) => {
   const lowerCasePage = page.toLowerCase();
   return (
     <AnchorLink
@@ -10,7 +10,10 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
         selectedPage === lowerCasePage ? "text-yellow" : ""
       } hover:text-yellow transition duration-500`}
       href={`#${lowerCasePage}`}
-      onClick={() => setSelectedPage(lowerCasePage)}
+      onClick={() => 
+        {setSelectedPage(lowerCasePage)
+        setIsMenuToggled(false)}
+      }
     >
       {page}
     </AnchorLink>
@@ -45,11 +48,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            {/* <Link
-              page="Testimonials"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            /> */}
             <Link
               page="Contact"
               selectedPage={selectedPage}
@@ -77,32 +75,33 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
             {/* MENU ITEMS */}
             <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
-              <Link
+              <Link 
                 page="Home"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
-                 onClick={() => setIsMenuToggled(false)}
+  //                onClick={() => {
+  //   setIsMenuToggled(false);
+  //   console.log("Home link clicked");
+  // }}        
+            setIsMenuToggled={setIsMenuToggled}
               />
               <Link
                 page="Skills"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
-                 onClick={() => setIsMenuToggled(false)}
+                setIsMenuToggled={setIsMenuToggled}
               />
               <Link
                 page="Projects"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                 setIsMenuToggled={setIsMenuToggled}
               />
-              {/* <Link
-                page="Testimonials"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              /> */}
               <Link
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
+                 setIsMenuToggled={setIsMenuToggled}
               />
             </div>
           </div>
